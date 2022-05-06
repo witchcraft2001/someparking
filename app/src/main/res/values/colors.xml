@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="primary_red">#FF530B30</color>
+    <color name="primary_gold">#FFE9CD7F</color>
+    <color name="secondary_gold">#FFC2A142</color>
+    <color name="background_gold">#33E9CD7F</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="white_30">#30FFFFFF</color>
+    <color name="white_60">#60FFFFFF</color>
+    <color name="content_primary">#FF171717</color>
+    <color name="content_tertiary">#99171717</color>
+    <color name="border_primary">#FFE0DBDE</color>
+    <color name="white_100">#FFFFFF</color>
+    <color name="secondary_red">#DD5227</color>
+    <color name="black_00">#000000</color>
+    <color name="black_00_alpha90">#E6000000</color>
+    <color name="black_00_alpha60">#99000000</color>
+    <color name="black_00_alpha20">#33000000</color>
+    <color name="black_60">#99171717</color>
+    <color name="gray_95">#F7F7F7</color>
+    <color name="gray_90">#E8E8E8</color>
+    <color name="text_gray">#9F9F9F</color>
+    <color name="text_gold">#C2A142</color>
+
+    <color name="bg_control_tertiary_lighter">@color/gray_90</color>
+    <color name="bg_overlay_darker">@color/black_00_alpha60</color>
+
+    <color name="bg_control_primary">@color/primary_gold</color>
+    <color name="bg_control_primary_darker">@color/secondary_gold</color>
+    <color name="bg_control_primary_lighter">@color/background_gold</color>
+
+    <color name="bg_page_primary">@color/white_100</color>
+    <color name="bg_surface_primary">@color/white_100</color>
+    <color name="content_warning_highcontrast">@color/secondary_red</color>
+
+    <color name="content_accent_brand">@color/primary_gold</color>
+    <color name="contained_main_btn_text_selector">#171717</color>
+    <color name="light_red_background">#10DD5227</color>
+    <color name="light_border">#E0DBDE</color>
+
+</resources>

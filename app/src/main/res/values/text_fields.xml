@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Widget.BaseTheme.EditText" parent="Widget.AppCompat.EditText">
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">?attr/editTextBackground</item>
+        <item name="android:textAppearance">@style/TextAppearance.BaseTheme.Body16Medium</item>
+        <item name="android:textColor">@color/content_primary</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:breakStrategy" tools:targetApi="m">simple</item>
+        <item name="android:hyphenationFrequency" tools:targetApi="m">none</item>
+        <item name="android:defaultFocusHighlightEnabled" tools:targetApi="o">false</item>
+
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:textCursorDrawable">@drawable/bg_text_cursor</item>
+        <item name="android:longClickable">false</item>
+        <item name="android:textIsSelectable">false</item>
+        <item name="android:inputType">textNoSuggestions</item>
+        <item name="android:imeOptions">flagNoExtractUi</item>
+        <item name="android:scrollbars">none</item>
+    </style>
+</resources>

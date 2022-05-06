@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    tools:background="@color/text_gray">
+
+    <LinearLayout
+        android:id="@+id/layout_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/button_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="@dimen/medium_size"
+            android:background="@drawable/bg_round_24dp_white_60"
+            android:src="@drawable/ic_close" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/bg_top_round_white"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <View
+                android:layout_width="48dp"
+                android:layout_height="5dp"
+                android:background="@drawable/gripper"
+                android:layout_marginTop="@dimen/small_plus_size"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/large_size"
+                android:layout_marginHorizontal="@dimen/medium_size"
+                android:text="@string/text_car_edit"
+                android:textAppearance="@style/TextAppearance.BaseTheme.Title24Bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/layout_carnumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_outline_round_gray"
+                android:layout_marginTop="@dimen/medium_size"
+                android:layout_marginHorizontal="@dimen/medium_size"
+                android:padding="@dimen/small_plus_size"
+                app:layout_constraintTop_toBottomOf="@id/tv_title"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_carnumber"/>
+
+                <EditText
+                    android:id="@+id/input_carnumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:maxLines="1"
+                    android:inputType="text"
+                    android:scrollHorizontally="true"
+                    android:ellipsize="end"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/text_enter_car_number" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_brand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_outline_round_gray"
+                android:layout_marginTop="@dimen/medium_size"
+                android:layout_marginHorizontal="@dimen/medium_size"
+                android:padding="@dimen/small_plus_size"
+                app:layout_constraintTop_toBottomOf="@id/layout_carnumber"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_car_brand"/>
+
+                <EditText
+                    android:id="@+id/input_brand"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:maxLines="1"
+                    android:inputType="text"
+                    android:scrollHorizontally="true"
+                    android:ellipsize="end"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/text_enter_car_brand" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_model"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_outline_round_gray"
+                android:layout_marginTop="@dimen/medium_size"
+                android:layout_marginHorizontal="@dimen/medium_size"
+                android:padding="@dimen/small_plus_size"
+                app:layout_constraintTop_toBottomOf="@id/layout_brand"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_car_model"/>
+
+                <EditText
+                    android:id="@+id/input_model"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:maxLines="1"
+                    android:inputType="text"
+                    android:scrollHorizontally="true"
+                    android:ellipsize="end"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/text_enter_car_model" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_outline_round_gray"
+                android:layout_marginTop="@dimen/medium_size"
+                android:layout_marginHorizontal="@dimen/medium_size"
+                android:padding="@dimen/small_plus_size"
+                app:layout_constraintTop_toBottomOf="@id/layout_model"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_comment"/>
+
+                <EditText
+                    android:id="@+id/input_comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:maxLines="1"
+                    android:inputType="text"
+                    android:scrollHorizontally="true"
+                    android:ellipsize="end"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/text_enter_comment" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button_save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/medium_size"
+                android:text="@string/button_save"
+                app:layout_constraintTop_toBottomOf="@id/layout_comment"/>
+
+            <Button
+                android:id="@+id/button_delete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/medium_size"
+                android:text="@string/button_remove_car"
+                android:background="@drawable/second_gold_semirounded_button"
+                android:textColor="@color/text_gold"
+                app:layout_constraintTop_toBottomOf="@id/button_save"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/medium_size"
+                app:layout_constraintTop_toBottomOf="@id/button_delete"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

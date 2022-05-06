@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.Status.SplashScreen" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:forceDarkAllowed">false</item>
+        <item name="colorPrimary">@color/primary_red</item>
+        <item name="colorPrimaryVariant">@color/primary_red</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
+
+    <style name="Theme.Status" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:forceDarkAllowed">false</item>
+        <item name="android:windowBackground">@color/bg_page_primary</item>
+        <item name="android:windowLightStatusBar">@bool/is_light</item>
+
+        <!-- Primary brand color. -->
+        <item name="colorAccent">@color/content_accent_brand</item>
+        <item name="colorPrimary">@color/content_accent_brand</item>
+        <item name="colorPrimaryDark">@color/bg_surface_primary</item>
+        <item name="colorError">@color/content_warning_highcontrast</item>
+        <item name="colorPrimaryVariant">?attr/colorPrimaryDark</item>
+        <item name="colorSecondary">@color/content_accent_brand</item>
+        <item name="colorSecondaryVariant">@color/content_accent_brand</item>
+
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="editTextStyle">@style/Widget.BaseTheme.EditText</item>
+        <item name="editTextBackground">@drawable/bg_edittext</item>
+
+        <item name="materialButtonStyle">@style/Widget.BaseTheme.Button.Contained.Main.Big</item>
+
+    </style>
+</resources>

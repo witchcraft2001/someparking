@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="large_plus_size">48dp</dimen>
+    <dimen name="large_size">32dp</dimen>
+    <dimen name="medium_size">16dp</dimen>
+    <dimen name="medium_plus_size">24dp</dimen>
+    <dimen name="small_size">8dp</dimen>
+    <dimen name="small_plus_size">12dp</dimen>
+    <dimen name="very_small_size">4dp</dimen>
+    <dimen name="list_item_height">64dp</dimen>
+    <bool name="is_light">true</bool>
+</resources>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/transparent">
+
+    <LinearLayout
+        android:id="@+id/layout_call_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/medium_size"
+        android:background="@drawable/bg_round_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_call_security"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="@string/text_call_security"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.BaseTheme.Body16Regular"
+            android:background="?android:selectableItemBackground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/text_gray"/>
+
+        <TextView
+            android:id="@+id/tv_call_parking"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="@string/text_call_parking"
+            android:gravity="center"
+            android:background="?android:selectableItemBackground"
+            android:textAppearance="@style/TextAppearance.BaseTheme.Body16Regular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/medium_size"
+        android:background="@drawable/bg_round_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_call_buttons">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="@string/text_cancel"
+            android:gravity="center"
+            android:textColor="@color/primary_gold"
+            android:background="?android:selectableItemBackground"
+            android:textAppearance="@style/TextAppearance.BaseTheme.Body16Bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/medium_size"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toBottomOf="@id/layout_cancel"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

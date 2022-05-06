@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="133dp"
+    android:layout_marginHorizontal="@dimen/medium_size"
+    android:layout_marginVertical="@dimen/small_size"
+    android:background="@drawable/white_semirounded_button">
+
+    <TextView
+        android:id="@+id/tv_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/medium_size"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textAppearance="@style/TextAppearance.BaseTheme.Caption14Regular"
+        android:textColor="@color/text_gray"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="ID 123" />
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/medium_size"
+        android:maxLength="20"
+        android:background="@drawable/bg_round_light_gold"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingHorizontal="@dimen/medium_size"
+        android:paddingVertical="@dimen/very_small_size"
+        android:singleLine="true"
+        android:textAppearance="@style/TextAppearance.BaseTheme.Caption14Regular"
+        android:textColor="@color/text_gray"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Активно Активно Активно" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginHorizontal="@dimen/medium_size"
+        android:layout_marginTop="@dimen/medium_size"
+        android:background="@color/text_gray"
+        app:layout_constraintTop_toBottomOf="@id/tv_id"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <ImageView
+        android:id="@+id/image_calendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/medium_size"
+        android:layout_marginTop="@dimen/small_size"
+        android:src="@drawable/ic_calendar"
+        app:layout_constraintBottom_toTopOf="@id/image_clock"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <ImageView
+        android:id="@+id/image_clock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/medium_size"
+        android:layout_marginBottom="@dimen/small_size"
+        android:src="@drawable/ic_clock"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_calendar" />
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/small_plus_size"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textAppearance="@style/TextAppearance.BaseTheme.Body15Medium"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/image_calendar"
+        app:layout_constraintStart_toEndOf="@+id/image_calendar"
+        app:layout_constraintTop_toTopOf="@+id/image_calendar"
+        tools:text="13 февраля 2022" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/small_plus_size"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textAppearance="@style/TextAppearance.BaseTheme.Body15Medium"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/image_clock"
+        app:layout_constraintStart_toEndOf="@+id/image_clock"
+        app:layout_constraintTop_toTopOf="@+id/image_clock"
+        tools:text="09:00-09:30" />
+
+    <ImageButton
+        android:id="@+id/button_edit"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_marginHorizontal="@dimen/medium_size"
+        android:background="@drawable/gray_semirounded_button"
+        android:src="@drawable/ic_arrow_right"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

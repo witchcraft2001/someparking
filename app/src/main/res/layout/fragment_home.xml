@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/frame_background">
+
+    <include
+        android:id="@+id/lay_toolbar"
+        layout="@layout/layout_toolbar"/>
+
+    <FrameLayout
+        android:id="@+id/content_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/navigation"
+        app:layout_constraintTop_toBottomOf="@id/lay_toolbar" />
+
+    <me.ibrahimsn.lib.SmoothBottomBar
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        app:backgroundColor="@color/bg_surface_primary"
+        app:textColor="@color/black"
+        app:itemFontFamily="@font/inter_regular"
+        app:textSize="11sp"
+        app:iconSize="24dp"
+        app:iconTint="@color/text_gray"
+        app:iconTintActive="@color/black"
+        app:menu="@menu/bottom_navigation_menu"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

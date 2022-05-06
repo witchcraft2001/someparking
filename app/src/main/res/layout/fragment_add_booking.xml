@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@color/primary_red">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/medium_size"
+        android:text="@string/text_booking_parking_place"
+        android:textAlignment="textStart"
+        android:textAppearance="@style/TextAppearance.BaseTheme.Title24Bold"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/large_plus_size"
+        android:background="@drawable/bg_top_round_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_form"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="scroll_form,button_add_booking" />
+
+    <ScrollView
+        android:id="@+id/scroll_form"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/medium_size"
+        app:layout_constraintBottom_toTopOf="@id/button_add_booking"
+        app:layout_constraintTop_toTopOf="@id/view">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/layout_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/medium_size"
+                android:background="@drawable/bg_outline_round_gray"
+                android:orientation="vertical"
+                android:padding="@dimen/small_plus_size"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_parking_date" />
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:layout_marginBottom="@dimen/small_size"
+                    android:text="@string/text_select_parking_date"
+                    android:textAppearance="@style/TextAppearance.BaseTheme.Body16Regular" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_date_incorrect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_incorrect_date"
+                android:textAppearance="@style/TextAppearance.BaseTheme.Caption14Regular"
+                android:textColor="@color/secondary_red"
+                android:visibility="gone"
+                android:layout_marginStart="@dimen/small_plus_size"
+                app:layout_constraintBottom_toBottomOf="@+id/layout_date"
+                app:layout_constraintStart_toStartOf="@+id/layout_date"
+                tools:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/layout_start"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/medium_size"
+                android:layout_marginTop="@dimen/medium_size"
+                android:layout_marginEnd="@dimen/small_size"
+                android:background="@drawable/bg_outline_round_gray"
+                android:orientation="vertical"
+                android:padding="@dimen/small_plus_size"
+                app:layout_constraintEnd_toStartOf="@id/layout_end"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layout_date">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_time_start" />
+
+                <TextView
+                    android:id="@+id/tv_start"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:layout_marginBottom="@dimen/small_size"
+                    android:text="@string/text_select_time"
+                    android:textAppearance="@style/TextAppearance.BaseTheme.Body16Regular" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_start_time_incorrect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_incorrect_time"
+                android:textAppearance="@style/TextAppearance.BaseTheme.Caption14Regular"
+                android:textColor="@color/secondary_red"
+                android:visibility="gone"
+                android:layout_marginStart="@dimen/small_plus_size"
+                app:layout_constraintBottom_toBottomOf="@+id/layout_start"
+                app:layout_constraintStart_toStartOf="@+id/layout_start"
+                tools:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/layout_end"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_size"
+                android:layout_marginTop="@dimen/medium_size"
+                android:layout_marginEnd="@dimen/medium_size"
+                android:background="@drawable/bg_outline_round_gray"
+                android:orientation="vertical"
+                android:padding="@dimen/small_plus_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/layout_start"
+                app:layout_constraintTop_toBottomOf="@id/layout_date">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_time_end" />
+
+                <TextView
+                    android:id="@+id/tv_end"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:layout_marginBottom="@dimen/small_size"
+                    android:text="@string/text_select_time"
+                    android:textAppearance="@style/TextAppearance.BaseTheme.Body16Regular" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_end_time_incorrect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_incorrect_time"
+                android:textAppearance="@style/TextAppearance.BaseTheme.Caption14Regular"
+                android:textColor="@color/secondary_red"
+                android:visibility="gone"
+                android:layout_marginStart="@dimen/small_plus_size"
+                app:layout_constraintBottom_toBottomOf="@+id/layout_end"
+                app:layout_constraintStart_toStartOf="@+id/layout_end"
+                tools:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/layout_place"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/medium_size"
+                android:layout_marginTop="@dimen/medium_size"
+                android:background="@drawable/bg_outline_round_gray"
+                android:orientation="vertical"
+                android:padding="@dimen/small_plus_size"
+                app:layout_constraintTop_toBottomOf="@id/layout_start">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_parking_place" />
+
+                <Spinner
+                    android:id="@+id/spinner_parking_place"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:layout_marginBottom="@dimen/small_size"
+                    android:text="@string/text_select_parking_place"
+                    android:textAppearance="@style/TextAppearance.BaseTheme.Body16Regular" />
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier_place"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="layout_start,layout_place" />
+
+            <LinearLayout
+                android:id="@+id/layout_company"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/medium_size"
+                android:layout_marginTop="@dimen/medium_size"
+                android:background="@drawable/bg_outline_round_gray"
+                android:orientation="vertical"
+                android:padding="@dimen/small_plus_size"
+                app:layout_constraintTop_toBottomOf="@id/barrier_place">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_company" />
+
+                <Spinner
+                    android:id="@+id/spinner_company"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/small_size"
+                    android:textAppearance="@style/TextAppearance.BaseTheme.Body16Regular" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_car"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/medium_size"
+                android:layout_marginTop="@dimen/medium_size"
+                android:background="@drawable/bg_outline_round_gray"
+                android:orientation="vertical"
+                android:padding="@dimen/small_plus_size"
+                app:layout_constraintTop_toBottomOf="@id/layout_company">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_car" />
+
+                <Spinner
+                    android:id="@+id/spinner_car"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/small_size"
+                    android:textAppearance="@style/TextAppearance.BaseTheme.Body16Regular" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/medium_size"
+                android:layout_marginTop="@dimen/medium_size"
+                android:background="@drawable/bg_outline_round_gray"
+                android:orientation="vertical"
+                android:padding="@dimen/small_plus_size"
+                app:layout_constraintTop_toBottomOf="@id/layout_car">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_visit_target" />
+
+                <EditText
+                    android:id="@+id/input_comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:background="@android:color/transparent"
+                    android:ellipsize="end"
+                    android:hint="@string/text_enter_your_target"
+                    android:layout_marginBottom="@dimen/small_size"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:scrollHorizontally="true" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_comment_incorrect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_enter_target"
+                android:textAppearance="@style/TextAppearance.BaseTheme.Caption14Regular"
+                android:textColor="@color/secondary_red"
+                android:visibility="gone"
+                android:layout_marginStart="@dimen/small_plus_size"
+                app:layout_constraintBottom_toBottomOf="@+id/layout_comment"
+                app:layout_constraintStart_toStartOf="@+id/layout_comment"
+                tools:visibility="visible" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/medium_size"
+                app:layout_constraintTop_toBottomOf="@id/layout_comment"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/button_add_booking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/medium_size"
+        android:text="@string/button_save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

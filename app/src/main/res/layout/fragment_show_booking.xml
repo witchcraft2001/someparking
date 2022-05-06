@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@color/primary_red">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/medium_size"
+        android:text="@string/text_parking_place_format"
+        android:textAlignment="textStart"
+        android:textAppearance="@style/TextAppearance.BaseTheme.Title24Bold"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/large_plus_size"
+        android:layout_marginHorizontal="@dimen/medium_size"
+        android:layout_marginBottom="@dimen/medium_size"
+        android:background="@drawable/bg_round_24dp_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_form"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="scroll_form,button_cancel_booking"/>
+
+    <ScrollView
+        android:id="@+id/scroll_form"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/medium_size"
+        android:layout_marginHorizontal="@dimen/medium_size"
+        app:layout_constraintBottom_toTopOf="@id/button_cancel_booking"
+        app:layout_constraintTop_toTopOf="@id/view">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/large_size"
+                android:background="@drawable/bg_round_light_gold"
+                android:maxLines="2"
+                android:scrollHorizontally="false"
+                android:paddingHorizontal="@dimen/medium_size"
+                android:paddingVertical="@dimen/very_small_size"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.BaseTheme.Caption14Regular"
+                android:textColor="@color/text_gray"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Активно Активно Активно Активно Активно Активно Активно" />
+
+            <LinearLayout
+                android:id="@+id/layout_timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_status">
+
+                <TextView
+                    android:id="@+id/tv_timer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.BaseTheme.LargeTitle32Medium"
+                    tools:text="00:00" />
+
+                <TextView
+                    android:id="@+id/tv_values"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/small_size"
+                    android:text="@string/text_minutes"
+                    android:textAppearance="@style/TextAppearance.BaseTheme.Label" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_timer_early"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/large_size"
+                android:layout_marginVertical="@dimen/very_small_size"
+                android:background="@drawable/bg_round_light_gray"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAlignment="center"
+                android:paddingVertical="@dimen/very_small_size"
+                android:paddingHorizontal="@dimen/small_size"
+                android:visibility="gone"
+                tools:visibility="visible"
+                app:layout_constraintTop_toBottomOf="@+id/tv_status"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="Будет активно через 2 часа 30 минут" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier_place"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="layout_timer, tv_status, tv_timer_early" />
+
+            <TextView
+                android:id="@+id/tv_carnumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.BaseTheme.Subtitle18Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/barrier_place"
+                tools:text="A555A777" />
+
+            <LinearLayout
+                android:id="@+id/layout_parking_place"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/medium_size"
+                android:background="@drawable/bg_outline_round_gray"
+                android:orientation="vertical"
+                android:padding="@dimen/small_plus_size"
+                app:layout_constraintTop_toBottomOf="@+id/tv_carnumber">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_driving" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/small_size"
+                    android:text="@string/text_parking_place" />
+
+                <TextView
+                    android:id="@+id/tv_parking_place"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:textAppearance="@style/TextAppearance.BaseTheme.Body16Medium"
+                    tools:text="A-186" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/medium_size"
+                android:background="@drawable/bg_outline_round_gray"
+                android:orientation="vertical"
+                android:padding="@dimen/small_plus_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layout_parking_place">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_calendar" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/small_size"
+                    android:text="@string/text_parking_date" />
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:textAppearance="@style/TextAppearance.BaseTheme.Body16Medium"
+                    tools:text="13 февраля 2022" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/medium_size"
+                android:background="@drawable/bg_outline_round_gray"
+                android:orientation="vertical"
+                android:padding="@dimen/small_plus_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layout_date">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_clock" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/small_size"
+                    android:text="@string/text_parking_time" />
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:textAppearance="@style/TextAppearance.BaseTheme.Body16Medium"
+                    tools:text="09:00-09:30" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/medium_size"
+                app:layout_constraintTop_toBottomOf="@id/layout_time" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/button_cancel_booking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/large_size"
+        android:layout_marginHorizontal="@dimen/large_size"
+        android:text="@string/button_cancel_booking"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
