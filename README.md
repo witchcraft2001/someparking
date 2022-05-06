@@ -6,11 +6,7 @@ This is a small example Android application with library usage:
 
 * Android Jetpack ViewModel;
 
-* Android LiveData;
-
 * Android Architecture Components LiveData;
-
-* Android Jetpack Paging library;
 
 * Dagger2;
 
