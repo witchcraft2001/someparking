@@ -1,4 +1,4 @@
-package com.status.androidapp
+package com.someparking.androidapp
 
 import org.junit.Test
 

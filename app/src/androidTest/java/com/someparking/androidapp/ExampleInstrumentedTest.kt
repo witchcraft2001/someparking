@@ -1,4 +1,4 @@
-package com.status.androidapp
+package com.someparking.androidapp
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
