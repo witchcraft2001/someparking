@@ -13,22 +13,21 @@ class BookingsRepository @Inject constructor() {
     fun getBookings(userId: Long): Single<RepositoryResult<List<BookingData>>> {
         return Single.timer(1000, TimeUnit.MILLISECONDS)
             .map {
-                val calendar = Calendar.getInstance()
-                val current = System.currentTimeMillis() / MILLIS_IN_SEC
+                val current = System.currentTimeMillis()
                 RepositoryResult.Success(
                     listOf(
                         BookingData(
                             1,
                             Date(current),
-                            Date(current + TimeUnit.HOURS.toSeconds(1)),
+                            Date(current + TimeUnit.HOURS.toMillis(1)),
                             "Active",
                             "A123AA123",
                             "B-123"
                         ),
                         BookingData(
                             2,
-                            Date(current + TimeUnit.HOURS.toSeconds(2)),
-                            Date(current + TimeUnit.HOURS.toSeconds(3)),
+                            Date(current + TimeUnit.HOURS.toMillis(2)),
+                            Date(current + TimeUnit.HOURS.toMillis(3)),
                             "Active",
                             "A123AA123",
                             "B-123"

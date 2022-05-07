@@ -10,6 +10,7 @@ import com.someparking.androidapp.core.base.SimpleListAdapter
 import com.someparking.androidapp.databinding.LayoutBookingListItemBinding
 import com.someparking.androidapp.domain.models.BookingModel
 import java.lang.StringBuilder
+import java.util.*
 
 class BookingListAdapter(
     private val clickListener: AdapterOnClickListener<BookingModel>
@@ -43,12 +44,18 @@ class BookingListAdapter(
                 val model = items[position] as BookingModel
                 with(holder) {
                     id.text = String.format("ID %d", model.id)
-                    date.text =
-                        String.format(dataFormat, model.start.date, model.start.month + 1, model.start.year + 1900)
-                    val start = String.format(timeFormat, model.start.hours, model.start.minutes)
-                    val end = String.format(timeFormat, model.end.hours, model.end.minutes)
+                    with(model.start) {
+                        date.text = String.format(
+                            dataFormat,
+                            get(Calendar.DAY_OF_MONTH),
+                            get(Calendar.MONTH) + 1,
+                            get(Calendar.YEAR)
+                        )
+                    }
+                    val start = getHoursMinutes(model.start)
+                    val end = getHoursMinutes(model.end)
                     time.text = String.format("%s - %s", start, end)
-                    status.text = getStatusCutString(model.status)
+                    status.text = model.status
                     itemView.setOnClickListener { clickListener.onClickItem(model) }
                     button.setOnClickListener { clickListener.onClickItem(model) }
                 }
@@ -57,18 +64,12 @@ class BookingListAdapter(
         }
     }
 
-    fun getStatusCutString(status: String): String {
-        val builder = StringBuilder()
-        val splitted = status.split(" ")
-        for (str in splitted) {
-            builder.append(str)
-            if (builder.length >= 15) {
-                break
-            }
-            builder.append(" ")
-        }
-        return builder.toString()
-    }
+    private fun getHoursMinutes(calendar: Calendar): String =
+        String.format(
+            timeFormat,
+            calendar.get(Calendar.HOUR_OF_DAY),
+            calendar.get(Calendar.MINUTE)
+        )
 
     class BookingViewHolder(binding: LayoutBookingListItemBinding) :
         RecyclerView.ViewHolder(binding.root) {

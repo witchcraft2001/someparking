@@ -6,8 +6,8 @@ import java.util.*
 
 data class BookingModel(
     val id: Long,
-    val start: Date,
-    val end: Date,
+    val start: Calendar,
+    val end: Calendar,
     val status: String,
     val carNum: String,
     val parkingSpace: String?
